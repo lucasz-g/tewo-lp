@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FoldText from "./components/FoldText";
 import GradientWaves from "./components/GradientWaves";
+import ArrowIcon from "./components/ArrowIcon";
 
 export default function Home() {
   return (
@@ -64,7 +65,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button--primary" href="/solutions">
               Explore solutions
-              <span aria-hidden="true">↗</span>
+              <ArrowIcon />
             </a>
             <a className="button button--secondary" href="/cycletrack">
               Meet CycleTrack AI

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArrowIcon from "../components/ArrowIcon";
 
 export const metadata: Metadata = {
   title: "Contact | TEWO",
@@ -26,7 +27,7 @@ export default function Contact() {
 
           <div className="contact-actions">
             <a className="contact-primary-action" href="tel:+34610633694">
-              Call us <span aria-hidden="true">↗</span>
+              Call us <ArrowIcon />
             </a>
             <Link href="/solutions" className="contact-secondary-action">
               Explore solutions

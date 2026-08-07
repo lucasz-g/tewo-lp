@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ArrowIcon from "./ArrowIcon";
 
 const links = [
   { label: "Home", href: "/" },
@@ -28,7 +29,7 @@ export default function UniversalNav() {
           ))}
           <Link className="universal-nav__cta" href="/contact">
             Talk to us
-            <span aria-hidden="true">↗</span>
+            <ArrowIcon />
           </Link>
         </div>
       </nav>

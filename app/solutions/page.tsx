@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FoldText from "../components/FoldText";
+import ArrowIcon from "../components/ArrowIcon";
 
 const solutions = [
   {
@@ -84,7 +85,7 @@ export default function Solutions() {
         </p>
         <a className="solutions-scroll" href="#portfolio">
           Explore solutions
-          <span aria-hidden="true">↓</span>
+          <ArrowIcon direction="down" />
         </a>
       </section>
 
@@ -112,7 +113,7 @@ export default function Solutions() {
 
               <Link href={solution.href} className="solution-card__link">
                 {solution.linkLabel}
-                <span aria-hidden="true">↗</span>
+                <ArrowIcon />
               </Link>
             </article>
           ))}
@@ -122,7 +123,9 @@ export default function Solutions() {
       <section className="solutions-cta">
         <span>Ready to explore?</span>
         <h2>See what circular intelligence can do for your business.</h2>
-        <Link href="/contact">Request a demo ↗</Link>
+        <Link href="/contact">
+          Request a demo <ArrowIcon />
+        </Link>
       </section>
     </main>
   );

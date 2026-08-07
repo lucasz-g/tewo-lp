@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FoldText from "../components/FoldText";
+import ArrowIcon from "../components/ArrowIcon";
 
 const valueAreas = [
   {
@@ -74,7 +75,7 @@ const Cycletrack = () => {
         <div className="cycletrack-actions">
           <a className="cycletrack-button cycletrack-button--primary" href="#opportunity">
             Explore CycleTrack
-            <span aria-hidden="true">↘</span>
+            <ArrowIcon direction="down-right" />
           </a>
           <Link className="cycletrack-button cycletrack-button--ghost" href="/">
             About TEWO
@@ -108,7 +109,7 @@ const Cycletrack = () => {
             </p>
             <strong>Brands need proof, not estimates.</strong>
             <Link href="/contact" className="cycletrack-text-link">
-              Ask for information <span aria-hidden="true">↗</span>
+              Ask for information <ArrowIcon />
             </Link>
           </div>
 
@@ -180,7 +181,9 @@ const Cycletrack = () => {
         <span>CycleTrack</span>
         <h2>The future of premium packaging is circular.</h2>
         <p>Trace the journey. Prove the impact. Build lasting value.</p>
-        <Link href="/contact">Request a demo ↗</Link>
+        <Link href="/contact">
+          Request a demo <ArrowIcon />
+        </Link>
       </section>
     </main>
   );
