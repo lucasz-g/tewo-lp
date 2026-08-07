@@ -1,69 +1,117 @@
 import Image from "next/image";
+import FoldText from "./components/FoldText";
+import GradientWaves from "./components/GradientWaves";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="home-shell">
+      <div className="hero-waves" aria-hidden="true">
+        <GradientWaves
+          horizonColor="#08333e"
+          waveColor="#197080"
+          crestColor="#dcffff"
+          speed={0.32}
+          amplitude={2.4}
+          waveScale={0.55}
+          waveRatio={0.9}
+          swell={34}
+          turbulence={18}
+          tilt={1.11}
+          zoom={1}
+          height={5.5}
+          fogDepth={16}
+          detail="medium"
+          brightness={1.16}
+          opacity={1}
+          mouseInteraction
+          parallaxStrength={0.35}
+          grain
+          grainIntensity={0.035}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+      </div>
+      <div className="hero-scrim" aria-hidden="true" />
+
+      <section id="home" className="hero-section">
+        <div className="hero-content">
+
+          <Image
+            src="/logo-tewo.svg"
+            alt="TEWO"
+            width={1332}
+            height={172}
+            priority
+            className="hero-logo"
+          />
+
+          <h1 className="home-fold-heading">
+            <FoldText
+              text="Digital solutions. Built with technology and AI."
+              splitBy="char"
+              hinge="top"
+              trigger="mount"
+              duration={0.65}
+              stagger={0.028}
+              ease="power3.out"
+              perspective={700}
+              creaseShading={0.55}
+              fontSize="clamp(1rem, 1.6vw, 1.2rem)"
+              fontWeight={400}
+              color="rgb(211 235 230 / 0.58)"
+              className="home-fold-text"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </h1>
+
+          <div className="hero-actions">
+            <a className="button button--primary" href="/solutions">
+              Explore solutions
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a className="button button--secondary" href="/cycletrack">
+              Meet CycleTrack AI
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="about" className="about-section">
+        <div className="about-section__inner">
+          <div className="about-section__intro">
+            <span className="section-label">About TEWO</span>
+            <h2>
+              Technology with purpose.
+              <span> Built for real impact.</span>
+            </h2>
+          </div>
+
+          <div className="about-section__content">
+            <p className="about-section__lead">
+              We turn complex challenges into simple, intelligent digital
+              products.
+            </p>
+            <p>
+              Software, data and AI — connected to move ideas forward.
+            </p>
+
+            <div className="about-principles" aria-label="TEWO principles">
+              <div>
+                <span>01</span>
+                <strong>Technology</strong>
+                <p>Reliable solutions for real challenges.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>Intelligence</strong>
+                <p>Data and AI, applied with clarity.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>Impact</strong>
+                <p>Relevant products for people and business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

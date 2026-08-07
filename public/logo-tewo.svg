@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1332 172" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">TEWO</title>
+  <defs>
+    <path id="tewo-t" d="M0 0h248v28H0zM109 52h30v120h-30z"/>
+    <path id="tewo-e" d="M323 0h234v28H323zM323 72h234v28H323zM323 144h234v28H323z"/>
+    <path id="tewo-w" d="M630 10l100 152L822 10l94 152 97-152" fill="none" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect id="tewo-o" x="1074" y="14" width="244" height="144" rx="24" fill="none" stroke-width="28"/>
+
+    <g id="tewo-mark">
+      <use href="#tewo-t"/>
+      <use href="#tewo-e"/>
+      <use href="#tewo-w" stroke="currentColor"/>
+      <use href="#tewo-o" stroke="currentColor"/>
+    </g>
+
+  </defs>
+
+  <g color="#f1f6f7" fill="currentColor">
+    <use href="#tewo-mark"/>
+  </g>
+
+</svg>
