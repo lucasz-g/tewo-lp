@@ -2,8 +2,38 @@ import Image from "next/image";
 import FoldText from "./components/FoldText";
 import GradientWaves from "./components/GradientWaves";
 import ArrowIcon from "./components/ArrowIcon";
+import { getLocale } from "./i18n";
 
-export default function Home() {
+const copy = {
+  en: {
+    hero: "Digital solutions. Built with technology and AI.", explore: "Explore solutions", cycle: "Meet CycleTrack AI",
+    about: "About TEWO", title: "Technology with purpose.", accent: " Built for real impact.",
+    lead: "We turn complex challenges into simple, intelligent digital products.", body: "Software, data and AI — connected to move ideas forward.", principles: "TEWO principles",
+    items: [["Technology", "Reliable solutions for real challenges."], ["Intelligence", "Data and AI, applied with clarity."], ["Impact", "Relevant products for people and business."]],
+  },
+  pt: {
+    hero: "Soluções digitais. Criadas com tecnologia e IA.", explore: "Explorar soluções", cycle: "Conheça o CycleTrack AI",
+    about: "Sobre a TEWO", title: "Tecnologia com propósito.", accent: " Feita para gerar impacto real.",
+    lead: "Transformamos desafios complexos em produtos digitais simples e inteligentes.", body: "Software, dados e IA — conectados para impulsionar ideias.", principles: "Princípios da TEWO",
+    items: [["Tecnologia", "Soluções confiáveis para desafios reais."], ["Inteligência", "Dados e IA aplicados com clareza."], ["Impacto", "Produtos relevantes para pessoas e negócios."]],
+  },
+  es: {
+    hero: "Soluciones digitales. Creadas con tecnología e IA.", explore: "Explorar soluciones", cycle: "Conoce CycleTrack AI",
+    about: "Sobre TEWO", title: "Tecnología con propósito.", accent: " Creada para generar impacto real.",
+    lead: "Transformamos retos complejos en productos digitales simples e inteligentes.", body: "Software, datos e IA — conectados para impulsar ideas.", principles: "Principios de TEWO",
+    items: [["Tecnología", "Soluciones fiables para retos reales."], ["Inteligencia", "Datos e IA aplicados con claridad."], ["Impacto", "Productos relevantes para personas y empresas."]],
+  },
+  fr: {
+    hero: "Solutions numériques. Conçues avec la technologie et l’IA.", explore: "Explorer les solutions", cycle: "Découvrir CycleTrack AI",
+    about: "À propos de TEWO", title: "La technologie avec un but.", accent: " Conçue pour un impact réel.",
+    lead: "Nous transformons des défis complexes en produits numériques simples et intelligents.", body: "Logiciel, données et IA — réunis pour faire avancer les idées.", principles: "Principes de TEWO",
+    items: [["Technologie", "Des solutions fiables pour des défis réels."], ["Intelligence", "Données et IA appliquées avec clarté."], ["Impact", "Des produits pertinents pour les personnes et les entreprises."]],
+  },
+} as const;
+
+export default async function Home() {
+  const text = copy[await getLocale()];
+
   return (
     <main className="home-shell">
       <div className="hero-waves" aria-hidden="true">
@@ -46,7 +76,7 @@ export default function Home() {
 
           <h1 className="home-fold-heading">
             <FoldText
-              text="Digital solutions. Built with technology and AI."
+              text={text.hero}
               splitBy="char"
               hinge="top"
               trigger="mount"
@@ -64,11 +94,11 @@ export default function Home() {
 
           <div className="hero-actions">
             <a className="button button--primary" href="/solutions">
-              Explore solutions
+              {text.explore}
               <ArrowIcon />
             </a>
             <a className="button button--secondary" href="/cycletrack">
-              Meet CycleTrack AI
+              {text.cycle}
             </a>
           </div>
         </div>
@@ -77,38 +107,29 @@ export default function Home() {
       <section id="about" className="about-section">
         <div className="about-section__inner">
           <div className="about-section__intro">
-            <span className="section-label">About TEWO</span>
+            <span className="section-label">{text.about}</span>
             <h2>
-              Technology with purpose.
-              <span> Built for real impact.</span>
+              {text.title}
+              <span>{text.accent}</span>
             </h2>
           </div>
 
           <div className="about-section__content">
             <p className="about-section__lead">
-              We turn complex challenges into simple, intelligent digital
-              products.
+              {text.lead}
             </p>
             <p>
-              Software, data and AI — connected to move ideas forward.
+              {text.body}
             </p>
 
-            <div className="about-principles" aria-label="TEWO principles">
-              <div>
-                <span>01</span>
-                <strong>Technology</strong>
-                <p>Reliable solutions for real challenges.</p>
-              </div>
-              <div>
-                <span>02</span>
-                <strong>Intelligence</strong>
-                <p>Data and AI, applied with clarity.</p>
-              </div>
-              <div>
-                <span>03</span>
-                <strong>Impact</strong>
-                <p>Relevant products for people and business.</p>
-              </div>
+            <div className="about-principles" aria-label={text.principles}>
+              {text.items.map(([title, description], index) => (
+                <div key={title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{title}</strong>
+                  <p>{description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

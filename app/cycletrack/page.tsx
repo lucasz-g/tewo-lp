@@ -1,62 +1,290 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FoldText from "../components/FoldText";
 import ArrowIcon from "../components/ArrowIcon";
+import FoldText from "../components/FoldText";
+import { getLocale } from "../i18n";
 
-const valueAreas = [
-  {
-    number: "01",
-    title: "Financial value",
-    summary: "Turn recovery into measurable business value.",
-    points: [
-      "Protect brand equity with a lifecycle aligned to premium positioning.",
-      "Create new value streams from tracked packaging recovery.",
-      "Improve operational efficiency through data-driven decisions.",
-      "Strengthen loyalty, investor confidence and market differentiation.",
+const copy = {
+  en: {
+    metadata: {
+      title: "CycleTrack AI | TEWO",
+      description: "Meet CycleTrack AI, a traceability solution by TEWO.",
+    },
+    lead: "Trace every cycle. Understand impact. Make better decisions.",
+    exploreCycletrack: "Explore CycleTrack",
+    aboutTewo: "About TEWO",
+    explore: "Explore",
+    opportunity: "The opportunity",
+    opportunityTitle: "Packaging is now a",
+    opportunityAccent: " board-level issue.",
+    opportunityBody:
+      "Extended Producer Responsibility, PPWR and Digital Product Passport mandates are converging with rising ESG reporting pressure.",
+    opportunityProof: "Brands need proof, not estimates.",
+    askInfo: "Ask for information",
+    traceAria: "Package traceability network illustration",
+    nodes: ["Brand", "Consumer", "Recovery", "Data"],
+    vision: "Our vision",
+    visionTitle: "Premium brands deserve more than",
+    visionAccent: " recycling.",
+    visionBody:
+      "CycleTrack turns an ordinary QR code into a post-consumer traceability network — connecting European manufacturers with Latin American communities and recycling partners.",
+    visionClosing: "One connected journey. Verifiable circular economy outcomes.",
+    help: "Where we help",
+    valueTitle: "How does CycleTrack create value?",
+    valueAreas: [
+      {
+        number: "01",
+        title: "Financial value",
+        summary: "Turn recovery into measurable business value.",
+        points: [
+          "Protect brand equity with a lifecycle aligned to premium positioning.",
+          "Create new value streams from tracked packaging recovery.",
+          "Improve operational efficiency through data-driven decisions.",
+          "Strengthen loyalty, investor confidence and market differentiation.",
+        ],
+      },
+      {
+        number: "02",
+        title: "Compliance",
+        summary: "Move from reactive reporting to informed action.",
+        points: [
+          "Monitor PPWR, EPR schemes and evolving sustainability requirements.",
+          "Identify packaging risks before they impact the business.",
+          "Provide traceability across the lifecycle, from production to recovery.",
+          "Support environmental, financial and regulatory decisions with evidence.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Social impact",
+        summary: "Connect every participant in the circular ecosystem.",
+        points: [
+          "Transform premium packaging from waste into a circular asset.",
+          "Reconnect consumers with the brand story beyond consumption.",
+          "Connect brands, consumers, collectors and recyclers.",
+          "Support local circular economies through visibility and incentives.",
+        ],
+      },
     ],
+    closingTitle: "The future of premium packaging is circular.",
+    closingBody: "Trace the journey. Prove the impact. Build lasting value.",
+    demo: "Request a demo",
   },
-  {
-    number: "02",
-    title: "Compliance",
-    summary: "Move from reactive reporting to informed action.",
-    points: [
-      "Monitor PPWR, EPR schemes and evolving sustainability requirements.",
-      "Identify packaging risks before they impact the business.",
-      "Provide traceability across the lifecycle, from production to recovery.",
-      "Support environmental, financial and regulatory decisions with evidence.",
+  pt: {
+    metadata: {
+      title: "CycleTrack AI | TEWO",
+      description: "Conheça o CycleTrack AI, a solução de rastreabilidade da TEWO.",
+    },
+    lead: "Rastreie cada ciclo. Entenda o impacto. Tome decisões melhores.",
+    exploreCycletrack: "Explorar CycleTrack",
+    aboutTewo: "Sobre a TEWO",
+    explore: "Explore",
+    opportunity: "A oportunidade",
+    opportunityTitle: "As embalagens agora são um",
+    opportunityAccent: " tema estratégico.",
+    opportunityBody:
+      "Responsabilidade Estendida do Produtor, PPWR e Passaporte Digital de Produto convergem com a crescente pressão por relatórios ESG.",
+    opportunityProof: "As marcas precisam de evidências, não estimativas.",
+    askInfo: "Solicitar informações",
+    traceAria: "Ilustração da rede de rastreabilidade de embalagens",
+    nodes: ["Marca", "Consumidor", "Recuperação", "Dados"],
+    vision: "Nossa visão",
+    visionTitle: "Marcas premium merecem mais do que",
+    visionAccent: " reciclagem.",
+    visionBody:
+      "O CycleTrack transforma um QR code comum em uma rede de rastreabilidade pós-consumo, conectando fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
+    visionClosing: "Uma jornada conectada. Resultados verificáveis para a economia circular.",
+    help: "Onde ajudamos",
+    valueTitle: "Como o CycleTrack gera valor?",
+    valueAreas: [
+      {
+        number: "01",
+        title: "Valor financeiro",
+        summary: "Transforme a recuperação em valor de negócio mensurável.",
+        points: [
+          "Proteja o valor da marca com um ciclo de vida alinhado ao posicionamento premium.",
+          "Crie novas fontes de valor com a recuperação rastreada de embalagens.",
+          "Melhore a eficiência operacional com decisões orientadas por dados.",
+          "Fortaleça a lealdade, a confiança de investidores e a diferenciação no mercado.",
+        ],
+      },
+      {
+        number: "02",
+        title: "Conformidade",
+        summary: "Passe de relatórios reativos para ações bem informadas.",
+        points: [
+          "Monitore PPWR, sistemas EPR e requisitos de sustentabilidade em evolução.",
+          "Identifique riscos de embalagem antes que afetem o negócio.",
+          "Ofereça rastreabilidade em todo o ciclo, da produção à recuperação.",
+          "Sustente decisões ambientais, financeiras e regulatórias com evidências.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Impacto social",
+        summary: "Conecte cada participante do ecossistema circular.",
+        points: [
+          "Transforme embalagens premium de resíduo em ativo circular.",
+          "Reconecte consumidores à história da marca após o consumo.",
+          "Conecte marcas, consumidores, coletores e recicladores.",
+          "Apoie economias circulares locais com visibilidade e incentivos.",
+        ],
+      },
     ],
+    closingTitle: "O futuro das embalagens premium é circular.",
+    closingBody: "Rastreie a jornada. Comprove o impacto. Construa valor duradouro.",
+    demo: "Solicitar demonstração",
   },
-  {
-    number: "03",
-    title: "Social impact",
-    summary: "Connect every participant in the circular ecosystem.",
-    points: [
-      "Transform premium packaging from waste into a circular asset.",
-      "Reconnect consumers with the brand story beyond consumption.",
-      "Connect brands, consumers, collectors and recyclers.",
-      "Support local circular economies through visibility and incentives.",
+  es: {
+    metadata: {
+      title: "CycleTrack AI | TEWO",
+      description: "Conoce CycleTrack AI, la solución de trazabilidad de TEWO.",
+    },
+    lead: "Rastrea cada ciclo. Comprende el impacto. Toma mejores decisiones.",
+    exploreCycletrack: "Explorar CycleTrack",
+    aboutTewo: "Sobre TEWO",
+    explore: "Explorar",
+    opportunity: "La oportunidad",
+    opportunityTitle: "Los envases son ahora un",
+    opportunityAccent: " asunto estratégico.",
+    opportunityBody:
+      "La Responsabilidad Ampliada del Productor, el PPWR y el Pasaporte Digital de Producto convergen con la creciente presión de los informes ESG.",
+    opportunityProof: "Las marcas necesitan pruebas, no estimaciones.",
+    askInfo: "Solicitar información",
+    traceAria: "Ilustración de la red de trazabilidad de envases",
+    nodes: ["Marca", "Consumidor", "Recuperación", "Datos"],
+    vision: "Nuestra visión",
+    visionTitle: "Las marcas premium merecen más que",
+    visionAccent: " reciclaje.",
+    visionBody:
+      "CycleTrack convierte un código QR común en una red de trazabilidad posconsumo que conecta a fabricantes europeos con comunidades latinoamericanas y socios de reciclaje.",
+    visionClosing: "Un recorrido conectado. Resultados verificables de economía circular.",
+    help: "Dónde ayudamos",
+    valueTitle: "¿Cómo genera valor CycleTrack?",
+    valueAreas: [
+      {
+        number: "01",
+        title: "Valor financiero",
+        summary: "Convierte la recuperación en valor empresarial medible.",
+        points: [
+          "Protege el valor de marca con un ciclo de vida alineado al posicionamiento premium.",
+          "Crea nuevas fuentes de valor mediante la recuperación trazada de envases.",
+          "Mejora la eficiencia operativa con decisiones basadas en datos.",
+          "Refuerza la fidelidad, la confianza del inversor y la diferenciación en el mercado.",
+        ],
+      },
+      {
+        number: "02",
+        title: "Cumplimiento",
+        summary: "Pasa de informes reactivos a acciones informadas.",
+        points: [
+          "Supervisa el PPWR, los sistemas EPR y los requisitos de sostenibilidad.",
+          "Identifica riesgos de envases antes de que afecten al negocio.",
+          "Aporta trazabilidad durante todo el ciclo, desde la producción hasta la recuperación.",
+          "Respalda decisiones ambientales, financieras y regulatorias con pruebas.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Impacto social",
+        summary: "Conecta a cada participante del ecosistema circular.",
+        points: [
+          "Convierte envases premium de residuos en activos circulares.",
+          "Reconecta a los consumidores con la historia de la marca tras el consumo.",
+          "Conecta marcas, consumidores, recolectores y recicladores.",
+          "Apoya economías circulares locales mediante visibilidad e incentivos.",
+        ],
+      },
     ],
+    closingTitle: "El futuro de los envases premium es circular.",
+    closingBody: "Rastrea el recorrido. Demuestra el impacto. Construye valor duradero.",
+    demo: "Solicitar una demo",
   },
-];
+  fr: {
+    metadata: {
+      title: "CycleTrack AI | TEWO",
+      description: "Découvrez CycleTrack AI, la solution de traçabilité de TEWO.",
+    },
+    lead: "Suivez chaque cycle. Mesurez l’impact. Prenez de meilleures décisions.",
+    exploreCycletrack: "Explorer CycleTrack",
+    aboutTewo: "À propos de TEWO",
+    explore: "Explorer",
+    opportunity: "L’opportunité",
+    opportunityTitle: "L’emballage est désormais un",
+    opportunityAccent: " enjeu stratégique.",
+    opportunityBody:
+      "La responsabilité élargie du producteur, le PPWR et le passeport numérique des produits convergent avec la pression croissante du reporting ESG.",
+    opportunityProof: "Les marques ont besoin de preuves, pas d’estimations.",
+    askInfo: "Demander des informations",
+    traceAria: "Illustration du réseau de traçabilité des emballages",
+    nodes: ["Marque", "Consommateur", "Collecte", "Données"],
+    vision: "Notre vision",
+    visionTitle: "Les marques premium méritent mieux que",
+    visionAccent: " le recyclage.",
+    visionBody:
+      "CycleTrack transforme un simple QR code en réseau de traçabilité post-consommation, reliant les fabricants européens aux communautés latino-américaines et aux partenaires du recyclage.",
+    visionClosing: "Un parcours connecté. Des résultats vérifiables pour l’économie circulaire.",
+    help: "Notre contribution",
+    valueTitle: "Comment CycleTrack crée-t-il de la valeur ?",
+    valueAreas: [
+      {
+        number: "01",
+        title: "Valeur financière",
+        summary: "Transformez la collecte en valeur commerciale mesurable.",
+        points: [
+          "Protégez la valeur de la marque grâce à un cycle de vie cohérent avec son positionnement premium.",
+          "Créez de nouvelles sources de valeur grâce au suivi de la récupération des emballages.",
+          "Améliorez l’efficacité opérationnelle avec des décisions guidées par les données.",
+          "Renforcez la fidélité, la confiance des investisseurs et la différenciation sur le marché.",
+        ],
+      },
+      {
+        number: "02",
+        title: "Conformité",
+        summary: "Passez d’un reporting réactif à une action éclairée.",
+        points: [
+          "Suivez le PPWR, les dispositifs REP et l’évolution des exigences de durabilité.",
+          "Identifiez les risques liés aux emballages avant qu’ils n’affectent l’activité.",
+          "Assurez la traçabilité sur tout le cycle, de la production à la récupération.",
+          "Appuyez les décisions environnementales, financières et réglementaires sur des preuves.",
+        ],
+      },
+      {
+        number: "03",
+        title: "Impact social",
+        summary: "Reliez chaque acteur de l’écosystème circulaire.",
+        points: [
+          "Transformez les emballages premium de déchets en actifs circulaires.",
+          "Reconnectez les consommateurs à l’histoire de la marque après l’usage.",
+          "Reliez marques, consommateurs, collecteurs et recycleurs.",
+          "Soutenez les économies circulaires locales par la visibilité et les incitations.",
+        ],
+      },
+    ],
+    closingTitle: "L’avenir des emballages premium est circulaire.",
+    closingBody: "Suivez le parcours. Prouvez l’impact. Créez une valeur durable.",
+    demo: "Demander une démo",
+  },
+} as const;
 
-export const metadata: Metadata = {
-  title: "CycleTrack AI | TEWO",
-  description: "Meet CycleTrack AI, a solution by TEWO.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return copy[await getLocale()].metadata;
+}
 
-const Cycletrack = () => {
+export default async function Cycletrack() {
+  const text = copy[await getLocale()];
+
   return (
     <main className="cycletrack-page">
       <div className="cycletrack-ambient" aria-hidden="true" />
       <div className="cycletrack-grid" aria-hidden="true" />
 
       <section className="cycletrack-hero">
-
         <h1 className="cycletrack-shiny-text">CycleTrack AI</h1>
 
         <p className="cycletrack-lead">
           <FoldText
-            text="Trace every cycle. Understand impact. Make better decisions."
+            text={text.lead}
             splitBy="char"
             hinge="top"
             trigger="mount"
@@ -74,11 +302,11 @@ const Cycletrack = () => {
 
         <div className="cycletrack-actions">
           <a className="cycletrack-button cycletrack-button--primary" href="#opportunity">
-            Explore CycleTrack
+            {text.exploreCycletrack}
             <ArrowIcon direction="down-right" />
           </a>
           <Link className="cycletrack-button cycletrack-button--ghost" href="/">
-            About TEWO
+            {text.aboutTewo}
           </Link>
         </div>
 
@@ -91,38 +319,34 @@ const Cycletrack = () => {
 
       <div className="cycletrack-scroll-hint" aria-hidden="true">
         <span />
-        Explore
+        {text.explore}
       </div>
 
       <section id="opportunity" className="cycletrack-opportunity">
         <div className="cycletrack-section-grid">
           <div className="cycletrack-section-copy">
-            <span className="cycletrack-section-label">The opportunity</span>
+            <span className="cycletrack-section-label">{text.opportunity}</span>
             <h2>
-              Packaging is now a
-              <span> board-level issue.</span>
+              {text.opportunityTitle}
+              <span>{text.opportunityAccent}</span>
             </h2>
-            <p>
-              Extended Producer Responsibility, PPWR and Digital Product
-              Passport mandates are converging with rising ESG reporting
-              pressure.
-            </p>
-            <strong>Brands need proof, not estimates.</strong>
+            <p>{text.opportunityBody}</p>
+            <strong>{text.opportunityProof}</strong>
             <Link href="/contact" className="cycletrack-text-link">
-              Ask for information <ArrowIcon />
+              {text.askInfo} <ArrowIcon />
             </Link>
           </div>
 
-          <div className="trace-visual" aria-label="Package traceability network illustration">
+          <div className="trace-visual" aria-label={text.traceAria}>
             <div className="trace-visual__package">
               <span>01</span>
               <strong>PACK / 2049</strong>
               <div className="trace-visual__code" aria-hidden="true" />
             </div>
-            <span className="trace-node trace-node--one">Brand</span>
-            <span className="trace-node trace-node--two">Consumer</span>
-            <span className="trace-node trace-node--three">Recovery</span>
-            <span className="trace-node trace-node--four">Data</span>
+            <span className="trace-node trace-node--one">{text.nodes[0]}</span>
+            <span className="trace-node trace-node--two">{text.nodes[1]}</span>
+            <span className="trace-node trace-node--three">{text.nodes[2]}</span>
+            <span className="trace-node trace-node--four">{text.nodes[3]}</span>
             <div className="trace-visual__orbit" aria-hidden="true" />
           </div>
         </div>
@@ -136,32 +360,26 @@ const Cycletrack = () => {
           </div>
 
           <div className="cycletrack-section-copy">
-            <span className="cycletrack-section-label">Our vision</span>
+            <span className="cycletrack-section-label">{text.vision}</span>
             <h2>
-              Premium brands deserve more than
-              <span> recycling.</span>
+              {text.visionTitle}
+              <span>{text.visionAccent}</span>
             </h2>
-            <p>
-              CycleTrack turns an ordinary QR code into a post-consumer
-              traceability network — connecting European manufacturers with
-              Latin American communities and recycling partners.
-            </p>
-            <p>
-              One connected journey. Verifiable circular economy outcomes.
-            </p>
+            <p>{text.visionBody}</p>
+            <p>{text.visionClosing}</p>
           </div>
         </div>
       </section>
 
       <section className="cycletrack-value">
         <div className="cycletrack-value__heading">
-          <span className="cycletrack-section-label">Where we help</span>
-          <h2>How does CycleTrack create value?</h2>
+          <span className="cycletrack-section-label">{text.help}</span>
+          <h2>{text.valueTitle}</h2>
         </div>
 
         <div className="cycletrack-value__cards">
-          {valueAreas.map((area) => (
-            <article className="cycletrack-value-card" key={area.title}>
+          {text.valueAreas.map((area) => (
+            <article className="cycletrack-value-card" key={area.number}>
               <div className="cycletrack-value-card__header">
                 <span>{area.number}</span>
                 <h3>{area.title}</h3>
@@ -179,14 +397,12 @@ const Cycletrack = () => {
 
       <section className="cycletrack-closing">
         <span>CycleTrack</span>
-        <h2>The future of premium packaging is circular.</h2>
-        <p>Trace the journey. Prove the impact. Build lasting value.</p>
+        <h2>{text.closingTitle}</h2>
+        <p>{text.closingBody}</p>
         <Link href="/contact">
-          Request a demo <ArrowIcon />
+          {text.demo} <ArrowIcon />
         </Link>
       </section>
     </main>
   );
-};
-
-export default Cycletrack;
+}
