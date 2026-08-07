@@ -44,12 +44,12 @@ export default function Contact() {
             <div>
               <dt>Phone</dt>
               <dd>
-                <a href="tel:+34610633694">+34 610 63 36 94</a>
+                <a href="tel:+551197317-7486">+55 11 97317-7486</a>
               </dd>
             </div>
             <div>
               <dt>Office</dt>
-              <dd>Castelldefels · Barcelona · Spain</dd>
+              <dd>São Paulo · Brazil</dd>
             </div>
             <div>
               <dt>Hours</dt>
