@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   title: "TEWO | Technology and AI Solutions",
   description:
     "TEWO builds digital products and technology solutions powered by AI.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

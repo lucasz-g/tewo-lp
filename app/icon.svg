@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="background" cx="50%" cy="46%" r="72%">
+      <stop offset="0" stop-color="#073746"/>
+      <stop offset="0.62" stop-color="#041f2c"/>
+      <stop offset="1" stop-color="#02131d"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#88edf0"/>
+      <stop offset="1" stop-color="#4fc9d1"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="104" fill="url(#background)"/>
+
+  <g fill="#f4f8f9">
+    <path d="M76 130h142v18H76zM137 164h20v78h-20z"/>
+    <path d="M286 130h146v18H286zM286 181h146v18H286zM286 224h146v18H286z"/>
+  </g>
+
+  <path
+    d="M77 309l51 91 48-91 49 91 51-91"
+    fill="none"
+    stroke="#f4f8f9"
+    stroke-width="19"
+    stroke-linecap="square"
+    stroke-linejoin="round"
+  />
+
+  <rect
+    x="300"
+    y="316"
+    width="132"
+    height="82"
+    rx="20"
+    fill="none"
+    stroke="url(#cyan)"
+    stroke-width="19"
+    filter="url(#soft-glow)"
+  />
+</svg>
