@@ -6,25 +6,25 @@ import { getLocale } from "./i18n";
 
 const copy = {
   en: {
-    hero: "Digital solutions. Built with technology and AI.", explore: "Explore solutions", cycle: "Meet CycleTrack AI",
+    hero: "Digital solutions. Built with technology and AI.", explore: "Explore solutions", cycle: "Meet CycleTrack",
     about: "About TEWO", title: "Technology with purpose.", accent: " Built for real impact.",
     lead: "We turn complex challenges into simple, intelligent digital products.", body: "Software, data and AI — connected to move ideas forward.", principles: "TEWO principles",
     items: [["Technology", "Reliable solutions for real challenges."], ["Intelligence", "Data and AI, applied with clarity."], ["Impact", "Relevant products for people and business."]],
   },
   pt: {
-    hero: "Soluções digitais. Criadas com tecnologia e IA.", explore: "Explorar soluções", cycle: "Conheça o CycleTrack AI",
+    hero: "Soluções digitais. Criadas com tecnologia e IA.", explore: "Explorar soluções", cycle: "Conheça o CycleTrack",
     about: "Sobre a TEWO", title: "Tecnologia com propósito.", accent: " Feita para gerar impacto real.",
     lead: "Transformamos desafios complexos em produtos digitais simples e inteligentes.", body: "Software, dados e IA — conectados para impulsionar ideias.", principles: "Princípios da TEWO",
     items: [["Tecnologia", "Soluções confiáveis para desafios reais."], ["Inteligência", "Dados e IA aplicados com clareza."], ["Impacto", "Produtos relevantes para pessoas e negócios."]],
   },
   es: {
-    hero: "Soluciones digitales. Creadas con tecnología e IA.", explore: "Explorar soluciones", cycle: "Conoce CycleTrack AI",
+    hero: "Soluciones digitales. Creadas con tecnología e IA.", explore: "Explorar soluciones", cycle: "Conoce CycleTrack",
     about: "Sobre TEWO", title: "Tecnología con propósito.", accent: " Creada para generar impacto real.",
     lead: "Transformamos retos complejos en productos digitales simples e inteligentes.", body: "Software, datos e IA — conectados para impulsar ideas.", principles: "Principios de TEWO",
     items: [["Tecnología", "Soluciones fiables para retos reales."], ["Inteligencia", "Datos e IA aplicados con claridad."], ["Impacto", "Productos relevantes para personas y empresas."]],
   },
   fr: {
-    hero: "Solutions numériques. Conçues avec la technologie et l’IA.", explore: "Explorer les solutions", cycle: "Découvrir CycleTrack AI",
+    hero: "Solutions numériques. Conçues avec la technologie et l’IA.", explore: "Explorer les solutions", cycle: "Découvrir CycleTrack",
     about: "À propos de TEWO", title: "La technologie avec un but.", accent: " Conçue pour un impact réel.",
     lead: "Nous transformons des défis complexes en produits numériques simples et intelligents.", body: "Logiciel, données et IA — réunis pour faire avancer les idées.", principles: "Principes de TEWO",
     items: [["Technologie", "Des solutions fiables pour des défis réels."], ["Intelligence", "Données et IA appliquées avec clarté."], ["Impact", "Des produits pertinents pour les personnes et les entreprises."]],

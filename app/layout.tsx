@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Jost, Syne } from "next/font/google";
+import { Jost, Outfit, Syne } from "next/font/google";
 import Footer from "./components/Footer";
 import UniversalNav from "./components/UniversalNav";
 import { getLocale } from "./i18n";
@@ -16,6 +16,12 @@ const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -54,7 +60,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang={locale}
-      className={`${syne.variable} ${jost.variable} h-full antialiased`}
+      className={`${syne.variable} ${jost.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <UniversalNav locale={locale} />

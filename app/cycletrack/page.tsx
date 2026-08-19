@@ -2,13 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArrowIcon from "../components/ArrowIcon";
 import FoldText from "../components/FoldText";
+import ProductGallery from "../components/ProductGallery";
 import { getLocale } from "../i18n";
+
+const cycletrackImages = [
+  "/cycletrack/homepage(1).png",
+  "/cycletrack/global-tracking(2).png",
+  "/cycletrack/dashboards(3).png",
+  "/cycletrack/cyclechat(4).png",
+  "/cycletrack/digitalpassport(5).png",
+  "/cycletrack/esganalyitcs(6).png",
+] as const;
 
 const copy = {
   en: {
     metadata: {
-      title: "CycleTrack AI | TEWO",
-      description: "Meet CycleTrack AI, a traceability solution by TEWO.",
+      title: "CycleTrack | TEWO",
+      description: "Meet CycleTrack, a traceability solution by TEWO.",
     },
     lead: "Trace every cycle. Understand impact. Make better decisions.",
     exploreCycletrack: "Explore CycleTrack",
@@ -29,6 +39,18 @@ const copy = {
     visionBody:
       "CycleTrack turns an ordinary QR code into a post-consumer traceability network — connecting European manufacturers with Latin American communities and recycling partners.",
     visionClosing: "One connected journey. Verifiable circular economy outcomes.",
+    product: "The product",
+    productTitle: "See CycleTrack in action.",
+    productBody:
+      "From global tracking to ESG analytics, every screen turns circularity data into clear, verifiable decisions.",
+    productScreens: [
+      "CycleTrack home screen",
+      "CycleTrack global tracking screen",
+      "CycleTrack dashboards screen",
+      "CycleChat assistant screen",
+      "CycleTrack digital passport screen",
+      "CycleTrack ESG analytics screen",
+    ],
     help: "Where we help",
     valueTitle: "How does CycleTrack create value?",
     valueAreas: [
@@ -72,8 +94,8 @@ const copy = {
   },
   pt: {
     metadata: {
-      title: "CycleTrack AI | TEWO",
-      description: "Conheça o CycleTrack AI, a solução de rastreabilidade da TEWO.",
+      title: "CycleTrack | TEWO",
+      description: "Conheça o CycleTrack, a solução de rastreabilidade da TEWO.",
     },
     lead: "Rastreie cada ciclo. Entenda o impacto. Tome decisões melhores.",
     exploreCycletrack: "Explorar CycleTrack",
@@ -94,6 +116,18 @@ const copy = {
     visionBody:
       "O CycleTrack transforma um QR code comum em uma rede de rastreabilidade pós-consumo, conectando fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
     visionClosing: "Uma jornada conectada. Resultados verificáveis para a economia circular.",
+    product: "O produto",
+    productTitle: "Veja o CycleTrack em ação.",
+    productBody:
+      "Do rastreamento global à análise ESG, cada tela transforma dados de circularidade em decisões claras e verificáveis.",
+    productScreens: [
+      "Tela inicial do CycleTrack",
+      "Tela de rastreamento global do CycleTrack",
+      "Tela de dashboards do CycleTrack",
+      "Tela do assistente CycleChat",
+      "Tela do passaporte digital do CycleTrack",
+      "Tela de análise ESG do CycleTrack",
+    ],
     help: "Onde ajudamos",
     valueTitle: "Como o CycleTrack gera valor?",
     valueAreas: [
@@ -137,8 +171,8 @@ const copy = {
   },
   es: {
     metadata: {
-      title: "CycleTrack AI | TEWO",
-      description: "Conoce CycleTrack AI, la solución de trazabilidad de TEWO.",
+      title: "CycleTrack | TEWO",
+      description: "Conoce CycleTrack, la solución de trazabilidad de TEWO.",
     },
     lead: "Rastrea cada ciclo. Comprende el impacto. Toma mejores decisiones.",
     exploreCycletrack: "Explorar CycleTrack",
@@ -159,6 +193,18 @@ const copy = {
     visionBody:
       "CycleTrack convierte un código QR común en una red de trazabilidad posconsumo que conecta a fabricantes europeos con comunidades latinoamericanas y socios de reciclaje.",
     visionClosing: "Un recorrido conectado. Resultados verificables de economía circular.",
+    product: "El producto",
+    productTitle: "Descubre CycleTrack en acción.",
+    productBody:
+      "Del seguimiento global al análisis ESG, cada pantalla convierte los datos de circularidad en decisiones claras y verificables.",
+    productScreens: [
+      "Pantalla de inicio de CycleTrack",
+      "Pantalla de seguimiento global de CycleTrack",
+      "Pantalla de paneles de CycleTrack",
+      "Pantalla del asistente CycleChat",
+      "Pantalla del pasaporte digital de CycleTrack",
+      "Pantalla de análisis ESG de CycleTrack",
+    ],
     help: "Dónde ayudamos",
     valueTitle: "¿Cómo genera valor CycleTrack?",
     valueAreas: [
@@ -202,8 +248,8 @@ const copy = {
   },
   fr: {
     metadata: {
-      title: "CycleTrack AI | TEWO",
-      description: "Découvrez CycleTrack AI, la solution de traçabilité de TEWO.",
+      title: "CycleTrack | TEWO",
+      description: "Découvrez CycleTrack, la solution de traçabilité de TEWO.",
     },
     lead: "Suivez chaque cycle. Mesurez l’impact. Prenez de meilleures décisions.",
     exploreCycletrack: "Explorer CycleTrack",
@@ -224,6 +270,18 @@ const copy = {
     visionBody:
       "CycleTrack transforme un simple QR code en réseau de traçabilité post-consommation, reliant les fabricants européens aux communautés latino-américaines et aux partenaires du recyclage.",
     visionClosing: "Un parcours connecté. Des résultats vérifiables pour l’économie circulaire.",
+    product: "Le produit",
+    productTitle: "Découvrez CycleTrack en action.",
+    productBody:
+      "Du suivi mondial à l’analyse ESG, chaque écran transforme les données de circularité en décisions claires et vérifiables.",
+    productScreens: [
+      "Écran d’accueil de CycleTrack",
+      "Écran de suivi mondial de CycleTrack",
+      "Écran des tableaux de bord de CycleTrack",
+      "Écran de l’assistant CycleChat",
+      "Écran du passeport numérique de CycleTrack",
+      "Écran d’analyse ESG de CycleTrack",
+    ],
     help: "Notre contribution",
     valueTitle: "Comment CycleTrack crée-t-il de la valeur ?",
     valueAreas: [
@@ -273,6 +331,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Cycletrack() {
   const text = copy[await getLocale()];
+  const galleryItems = text.productScreens.map((label, index) => ({
+    image: cycletrackImages[index],
+    label,
+  }));
 
   return (
     <main className="cycletrack-page">
@@ -280,7 +342,7 @@ export default async function Cycletrack() {
       <div className="cycletrack-grid" aria-hidden="true" />
 
       <section className="cycletrack-hero">
-        <h1 className="cycletrack-shiny-text">CycleTrack AI</h1>
+        <h1 className="cycletrack-shiny-text">CycleTrack</h1>
 
         <p className="cycletrack-lead">
           <FoldText
@@ -368,6 +430,18 @@ export default async function Cycletrack() {
             <p>{text.visionBody}</p>
             <p>{text.visionClosing}</p>
           </div>
+        </div>
+      </section>
+
+      <section className="cycletrack-product">
+        <div className="cycletrack-product__heading">
+          <span className="cycletrack-section-label">{text.product}</span>
+          <h2>{text.productTitle}</h2>
+          <p>{text.productBody}</p>
+        </div>
+
+        <div className="cycletrack-product__carousel">
+          <ProductGallery items={galleryItems} />
         </div>
       </section>
 
