@@ -929,35 +929,138 @@ html {
   grid-template-columns: minmax(22rem, 0.9fr) minmax(0, 1.1fr);
 }
 
-.cycletrack-vision-mark {
+.cycletrack-vision-network {
   position: relative;
   display: grid;
-  width: min(100%, 28rem);
+  width: min(100%, 32rem);
   aspect-ratio: 1;
   place-items: center;
   margin-inline: auto;
-  border: 1px solid rgb(128 211 191 / 0.1);
-  border-radius: 50%;
+  isolation: isolate;
 }
 
-.cycletrack-vision-mark::before,
-.cycletrack-vision-mark::after,
-.cycletrack-vision-mark div {
+.cycletrack-vision-network::before {
   position: absolute;
-  border: 1px solid rgb(128 211 191 / 0.08);
+  z-index: -2;
+  inset: 4%;
   border-radius: 50%;
+  background: radial-gradient(circle, rgb(61 205 170 / 0.12), transparent 67%);
+  filter: blur(10px);
   content: "";
 }
 
-.cycletrack-vision-mark::before { inset: 12%; }
-.cycletrack-vision-mark::after { inset: 27%; }
-.cycletrack-vision-mark div { inset: 40%; background: rgb(83 195 168 / 0.1); }
+.cycletrack-vision-network__diagram {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
 
-.cycletrack-vision-mark > span {
-  z-index: 1;
-  color: rgb(168 226 212 / 0.8);
-  font-size: clamp(4rem, 9vw, 8rem);
-  font-weight: 400;
+.cycletrack-vision-network__glow {
+  fill: url("#vision-network-glow");
+}
+
+.cycletrack-vision-network__ring,
+.cycletrack-vision-network__route,
+.cycletrack-vision-network__link,
+.cycletrack-vision-network__scan {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.cycletrack-vision-network__ring {
+  stroke: rgb(125 220 197 / 0.17);
+  stroke-width: 1;
+}
+
+.cycletrack-vision-network__route {
+  stroke: rgb(107 207 183 / 0.22);
+  stroke-width: 1;
+  stroke-dasharray: 6 8;
+}
+
+.cycletrack-vision-network__link {
+  stroke: url("#vision-network-line");
+  stroke-width: 1.5;
+}
+
+.cycletrack-vision-network__scan {
+  fill: rgb(95 204 178 / 0.15);
+  stroke: rgb(157 231 214 / 0.82);
+  stroke-width: 1.25;
+  filter: drop-shadow(0 0 12px rgb(94 218 188 / 0.35));
+}
+
+.cycletrack-vision-network__bottle {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: 76%;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 28px rgb(0 0 0 / 0.42));
+  animation: cycletrack-bottle-float 6s ease-in-out infinite;
+}
+
+.cycletrack-vision-network__node {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  min-width: clamp(6.6rem, 11vw, 8.7rem);
+  min-height: 2.65rem;
+  padding: 0.55rem 0.9rem;
+  place-items: center;
+  border: 1px solid rgb(132 219 199 / 0.48);
+  border-radius: 999px;
+  background: linear-gradient(145deg, rgb(6 45 37 / 0.95), rgb(5 32 27 / 0.86));
+  box-shadow: 0 12px 35px rgb(0 0 0 / 0.22), inset 0 1px rgb(255 255 255 / 0.04);
+  color: rgb(238 249 246 / 0.9);
+  font-size: clamp(0.52rem, 0.8vw, 0.66rem);
+  font-weight: 620;
+  letter-spacing: 0.045em;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.cycletrack-vision-network__node::before {
+  position: absolute;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: #8de0cd;
+  box-shadow: 0 0 10px rgb(111 226 199 / 0.75);
+  content: "";
+}
+
+.cycletrack-vision-network__node--1 { top: 8%; left: -1%; }
+.cycletrack-vision-network__node--2 { top: 8%; right: -1%; }
+.cycletrack-vision-network__node--3 { top: 45%; right: -7%; }
+.cycletrack-vision-network__node--4 { right: 8%; bottom: 2%; }
+.cycletrack-vision-network__node--5 { bottom: 5%; left: -2%; }
+
+.cycletrack-vision-network__node--1::before,
+.cycletrack-vision-network__node--5::before {
+  right: -0.17rem;
+}
+
+.cycletrack-vision-network__node--2::before,
+.cycletrack-vision-network__node--3::before,
+.cycletrack-vision-network__node--4::before {
+  left: -0.17rem;
+}
+
+@keyframes cycletrack-bottle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.35rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cycletrack-vision-network__bottle {
+    animation: none;
+  }
 }
 
 .cycletrack-product {
@@ -1139,7 +1242,7 @@ html {
     grid-template-columns: 1fr;
   }
 
-  .cycletrack-section-grid--vision .cycletrack-vision-mark {
+  .cycletrack-section-grid--vision .cycletrack-vision-network {
     order: 2;
   }
 
@@ -1167,6 +1270,23 @@ html {
   .trace-node--two { right: 4%; }
   .trace-node--three { right: 5%; }
   .trace-node--four { left: 5%; }
+
+  .cycletrack-vision-network {
+    width: min(96%, 30rem);
+  }
+
+  .cycletrack-vision-network__node {
+    min-width: 6.2rem;
+    min-height: 2.35rem;
+    padding-inline: 0.65rem;
+    font-size: 0.48rem;
+  }
+
+  .cycletrack-vision-network__node--1 { left: 0; }
+  .cycletrack-vision-network__node--2 { right: 0; }
+  .cycletrack-vision-network__node--3 { right: -2%; }
+  .cycletrack-vision-network__node--4 { right: 7%; }
+  .cycletrack-vision-network__node--5 { left: 0; }
 
   .cycletrack-product__carousel {
     margin-top: 1rem;

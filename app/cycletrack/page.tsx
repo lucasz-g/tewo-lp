@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ArrowIcon from "../components/ArrowIcon";
 import FoldText from "../components/FoldText";
@@ -39,6 +40,9 @@ const copy = {
     visionBody:
       "CycleTrack turns an ordinary QR code into a post-consumer traceability network — connecting European manufacturers with Latin American communities and recycling partners.",
     visionClosing: "One connected journey. Verifiable circular economy outcomes.",
+    visionNetworkAria:
+      "Bottle connected to suppliers, distributors, points of sale, collectors and recyclers",
+    visionNodes: ["Suppliers", "Distributors", "Points of sale", "Collectors", "Recyclers"],
     product: "The product",
     productTitle: "See CycleTrack in action.",
     productBody:
@@ -116,6 +120,9 @@ const copy = {
     visionBody:
       "O CycleTrack transforma um QR code comum em uma rede de rastreabilidade pós-consumo, conectando fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
     visionClosing: "Uma jornada conectada. Resultados verificáveis para a economia circular.",
+    visionNetworkAria:
+      "Garrafa conectada a fornecedores, distribuidores, pontos de venda, coletores e recicladores",
+    visionNodes: ["Fornecedores", "Distribuidores", "Pontos de venda", "Coletores", "Recicladores"],
     product: "O produto",
     productTitle: "Veja o CycleTrack em ação.",
     productBody:
@@ -193,6 +200,9 @@ const copy = {
     visionBody:
       "CycleTrack convierte un código QR común en una red de trazabilidad posconsumo que conecta a fabricantes europeos con comunidades latinoamericanas y socios de reciclaje.",
     visionClosing: "Un recorrido conectado. Resultados verificables de economía circular.",
+    visionNetworkAria:
+      "Botella conectada con proveedores, distribuidores, puntos de venta, recolectores y recicladores",
+    visionNodes: ["Proveedores", "Distribuidores", "Puntos de venta", "Recolectores", "Recicladores"],
     product: "El producto",
     productTitle: "Descubre CycleTrack en acción.",
     productBody:
@@ -270,6 +280,9 @@ const copy = {
     visionBody:
       "CycleTrack transforme un simple QR code en réseau de traçabilité post-consommation, reliant les fabricants européens aux communautés latino-américaines et aux partenaires du recyclage.",
     visionClosing: "Un parcours connecté. Des résultats vérifiables pour l’économie circulaire.",
+    visionNetworkAria:
+      "Bouteille reliée aux fournisseurs, distributeurs, points de vente, collecteurs et recycleurs",
+    visionNodes: ["Fournisseurs", "Distributeurs", "Points de vente", "Collecteurs", "Recycleurs"],
     product: "Le produit",
     productTitle: "Découvrez CycleTrack en action.",
     productBody:
@@ -416,9 +429,61 @@ export default async function Cycletrack() {
 
       <section className="cycletrack-vision">
         <div className="cycletrack-section-grid cycletrack-section-grid--vision">
-          <div className="cycletrack-vision-mark" aria-hidden="true">
-            <span>C</span>
-            <div />
+          <div
+            className="cycletrack-vision-network"
+            role="img"
+            aria-label={text.visionNetworkAria}
+          >
+            <svg
+              className="cycletrack-vision-network__diagram"
+              viewBox="0 0 560 560"
+              aria-hidden="true"
+            >
+              <defs>
+                <radialGradient id="vision-network-glow">
+                  <stop offset="0" stopColor="#66d5bb" stopOpacity="0.2" />
+                  <stop offset="1" stopColor="#66d5bb" stopOpacity="0" />
+                </radialGradient>
+                <linearGradient id="vision-network-line" x1="0" y1="0" x2="1" y2="1">
+                  <stop stopColor="#9ee3d3" stopOpacity="0.5" />
+                  <stop offset="1" stopColor="#5cbda7" stopOpacity="0.12" />
+                </linearGradient>
+              </defs>
+
+              <circle className="cycletrack-vision-network__glow" cx="280" cy="280" r="245" />
+              <circle className="cycletrack-vision-network__ring" cx="280" cy="280" r="218" />
+              <circle className="cycletrack-vision-network__ring" cx="280" cy="280" r="154" />
+              <circle className="cycletrack-vision-network__ring" cx="280" cy="280" r="91" />
+
+              <path
+                className="cycletrack-vision-network__route"
+                d="M118 94L443 96L507 281L399 474L117 456Z"
+              />
+              <path className="cycletrack-vision-network__link" d="M116 94L260 254" />
+              <path className="cycletrack-vision-network__link" d="M445 96L301 254" />
+              <path className="cycletrack-vision-network__link" d="M507 281L317 281" />
+              <path className="cycletrack-vision-network__link" d="M399 474L301 313" />
+              <path className="cycletrack-vision-network__link" d="M117 456L259 313" />
+              <circle className="cycletrack-vision-network__scan" cx="280" cy="280" r="34" />
+            </svg>
+
+            <Image
+              className="cycletrack-vision-network__bottle"
+              src="/cycletrack/vision-bottle.png"
+              alt=""
+              width={1024}
+              height={1536}
+              sizes="(max-width: 900px) 55vw, 16rem"
+            />
+
+            {text.visionNodes.map((node, index) => (
+              <span
+                className={`cycletrack-vision-network__node cycletrack-vision-network__node--${index + 1}`}
+                key={node}
+              >
+                {node}
+              </span>
+            ))}
           </div>
 
           <div className="cycletrack-section-copy">
