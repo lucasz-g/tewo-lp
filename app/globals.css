@@ -819,6 +819,17 @@ html {
   font-weight: 580;
 }
 
+.cycletrack-opportunity .cycletrack-identity-statement {
+  display: block;
+  max-width: 30rem;
+  margin-inline: auto;
+  color: #82d8c4;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 580;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .cycletrack-text-link {
   display: inline-flex;
   align-items: center;
@@ -827,6 +838,11 @@ html {
   color: #79d9c1;
   font-size: 0.78rem;
   text-decoration: none;
+}
+
+.trace-visual-column {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .trace-visual {
@@ -858,8 +874,8 @@ html {
   position: relative;
   z-index: 2;
   display: flex;
-  width: 12.5rem;
-  height: 16rem;
+  width: 14rem;
+  height: 19rem;
   flex-direction: column;
   padding: 1.2rem;
   border: 1px solid rgb(198 235 226 / 0.22);
@@ -867,31 +883,48 @@ html {
   background: linear-gradient(145deg, rgb(224 244 238 / 0.12), rgb(255 255 255 / 0.035));
   box-shadow: 0 28px 90px rgb(0 0 0 / 0.28);
   backdrop-filter: blur(18px);
-  transform: rotate(-5deg);
+  transform: rotate(-2deg);
 }
 
 .trace-visual__package > span {
   color: rgb(164 221 208 / 0.5);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
+  font-weight: 560;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .trace-visual__package > strong {
   margin-top: 0.45rem;
   color: rgb(238 249 246 / 0.86);
-  font-size: 0.72rem;
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: 0.66rem;
   font-weight: 580;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
 }
 
-.trace-visual__code {
-  width: 5.4rem;
-  height: 5.4rem;
+.trace-visual__bottle {
+  width: 6.2rem;
+  height: auto;
   margin: auto;
-  background:
-    linear-gradient(90deg, currentColor 12%, transparent 12% 24%, currentColor 24% 42%, transparent 42% 56%, currentColor 56% 70%, transparent 70% 84%, currentColor 84%),
-    linear-gradient(currentColor 10%, transparent 10% 25%, currentColor 25% 38%, transparent 38% 52%, currentColor 52% 72%, transparent 72% 84%, currentColor 84%);
-  color: rgb(216 243 236 / 0.78);
-  opacity: 0.8;
+  fill: rgb(90 205 178 / 0.1);
+  filter: drop-shadow(0 18px 24px rgb(0 0 0 / 0.3));
+  stroke: rgb(181 235 222 / 0.72);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+
+.trace-visual__bottle circle {
+  fill: rgb(101 217 189 / 0.12);
+  stroke: rgb(132 226 204 / 0.78);
+}
+
+.trace-visual__package > .trace-visual__passport-mark {
+  align-self: center;
+  color: rgb(132 226 204 / 0.72);
+  font-size: 0.52rem;
 }
 
 .trace-visual__orbit {
@@ -993,14 +1026,16 @@ html {
   filter: drop-shadow(0 0 12px rgb(94 218 188 / 0.35));
 }
 
-.cycletrack-vision-network__bottle {
+.cycletrack-vision-network__bottle-frame {
   position: relative;
   z-index: 2;
-  width: auto;
+  width: 52%;
   height: 76%;
-  object-fit: contain;
   filter: drop-shadow(0 28px 28px rgb(0 0 0 / 0.42));
-  animation: cycletrack-bottle-float 6s ease-in-out infinite;
+}
+
+.cycletrack-vision-network__bottle {
+  object-fit: contain;
 }
 
 .cycletrack-vision-network__node {
@@ -1050,17 +1085,6 @@ html {
 .cycletrack-vision-network__node--3::before,
 .cycletrack-vision-network__node--4::before {
   left: -0.17rem;
-}
-
-@keyframes cycletrack-bottle-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-0.35rem); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cycletrack-vision-network__bottle {
-    animation: none;
-  }
 }
 
 .cycletrack-product {

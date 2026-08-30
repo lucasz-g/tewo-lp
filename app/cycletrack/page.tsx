@@ -15,6 +15,8 @@ const cycletrackImages = [
   "/cycletrack/esganalyitcs(6).png",
 ] as const;
 
+const cycletrackProductCode = "PKG-LOT-2026-8841-0001";
+
 const copy = {
   en: {
     metadata: {
@@ -30,15 +32,18 @@ const copy = {
     opportunityAccent: " board-level issue.",
     opportunityBody:
       "Extended Producer Responsibility, PPWR and Digital Product Passport mandates are converging with rising ESG reporting pressure.",
+    opportunityIdentity:
+      "Each bottle receives a unique digital identity — the foundation of its Digital Product Passport.",
     opportunityProof: "Brands need proof, not estimates.",
     askInfo: "Ask for information",
-    traceAria: "Package traceability network illustration",
+    traceAria: "Unique product identity connected to the traceability network",
+    identityCodeLabel: "Unique product code",
     nodes: ["Brand", "Consumer", "Recovery", "Data"],
     vision: "Our vision",
     visionTitle: "Premium brands deserve more than",
     visionAccent: " recycling.",
     visionBody:
-      "CycleTrack turns an ordinary QR code into a post-consumer traceability network — connecting European manufacturers with Latin American communities and recycling partners.",
+      "CycleTrack links a unique product code to each bottle’s digital identity, creating a post-consumer traceability network that connects European manufacturers with Latin American communities and recycling partners.",
     visionClosing: "One connected journey. Verifiable circular economy outcomes.",
     visionNetworkAria:
       "Bottle connected to suppliers, distributors, points of sale, collectors and recyclers",
@@ -110,15 +115,18 @@ const copy = {
     opportunityAccent: " tema estratégico.",
     opportunityBody:
       "Responsabilidade Estendida do Produtor, PPWR e Passaporte Digital de Produto convergem com a crescente pressão por relatórios ESG.",
+    opportunityIdentity:
+      "Cada garrafa recebe uma identidade digital única — a base do seu Passaporte Digital do Produto.",
     opportunityProof: "As marcas precisam de evidências, não estimativas.",
     askInfo: "Solicitar informações",
-    traceAria: "Ilustração da rede de rastreabilidade de embalagens",
+    traceAria: "Identidade única do produto conectada à rede de rastreabilidade",
+    identityCodeLabel: "Código único do produto",
     nodes: ["Marca", "Consumidor", "Recuperação", "Dados"],
     vision: "Nossa visão",
     visionTitle: "Marcas premium merecem mais do que",
     visionAccent: " reciclagem.",
     visionBody:
-      "O CycleTrack transforma um QR code comum em uma rede de rastreabilidade pós-consumo, conectando fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
+      "O CycleTrack vincula um código único de produto à identidade digital de cada garrafa, criando uma rede de rastreabilidade pós-consumo que conecta fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
     visionClosing: "Uma jornada conectada. Resultados verificáveis para a economia circular.",
     visionNetworkAria:
       "Garrafa conectada a fornecedores, distribuidores, pontos de venda, coletores e recicladores",
@@ -190,15 +198,18 @@ const copy = {
     opportunityAccent: " asunto estratégico.",
     opportunityBody:
       "La Responsabilidad Ampliada del Productor, el PPWR y el Pasaporte Digital de Producto convergen con la creciente presión de los informes ESG.",
+    opportunityIdentity:
+      "Cada botella recibe una identidad digital única — la base de su Pasaporte Digital de Producto.",
     opportunityProof: "Las marcas necesitan pruebas, no estimaciones.",
     askInfo: "Solicitar información",
-    traceAria: "Ilustración de la red de trazabilidad de envases",
+    traceAria: "Identidad única del producto conectada a la red de trazabilidad",
+    identityCodeLabel: "Código único del producto",
     nodes: ["Marca", "Consumidor", "Recuperación", "Datos"],
     vision: "Nuestra visión",
     visionTitle: "Las marcas premium merecen más que",
     visionAccent: " reciclaje.",
     visionBody:
-      "CycleTrack convierte un código QR común en una red de trazabilidad posconsumo que conecta a fabricantes europeos con comunidades latinoamericanas y socios de reciclaje.",
+      "CycleTrack vincula un código único de producto con la identidad digital de cada botella y crea una red de trazabilidad posconsumo que conecta a fabricantes europeos, comunidades latinoamericanas y socios de reciclaje.",
     visionClosing: "Un recorrido conectado. Resultados verificables de economía circular.",
     visionNetworkAria:
       "Botella conectada con proveedores, distribuidores, puntos de venta, recolectores y recicladores",
@@ -270,15 +281,18 @@ const copy = {
     opportunityAccent: " enjeu stratégique.",
     opportunityBody:
       "La responsabilité élargie du producteur, le PPWR et le passeport numérique des produits convergent avec la pression croissante du reporting ESG.",
+    opportunityIdentity:
+      "Chaque bouteille reçoit une identité numérique unique — la base de son passeport numérique de produit.",
     opportunityProof: "Les marques ont besoin de preuves, pas d’estimations.",
     askInfo: "Demander des informations",
-    traceAria: "Illustration du réseau de traçabilité des emballages",
+    traceAria: "Identité unique du produit reliée au réseau de traçabilité",
+    identityCodeLabel: "Code produit unique",
     nodes: ["Marque", "Consommateur", "Collecte", "Données"],
     vision: "Notre vision",
     visionTitle: "Les marques premium méritent mieux que",
     visionAccent: " le recyclage.",
     visionBody:
-      "CycleTrack transforme un simple QR code en réseau de traçabilité post-consommation, reliant les fabricants européens aux communautés latino-américaines et aux partenaires du recyclage.",
+      "CycleTrack associe un code produit unique à l’identité numérique de chaque bouteille et crée un réseau de traçabilité post-consommation reliant les fabricants européens, les communautés latino-américaines et les partenaires du recyclage.",
     visionClosing: "Un parcours connecté. Des résultats vérifiables pour l’économie circulaire.",
     visionNetworkAria:
       "Bouteille reliée aux fournisseurs, distributeurs, points de vente, collecteurs et recycleurs",
@@ -412,17 +426,31 @@ export default async function Cycletrack() {
             </Link>
           </div>
 
-          <div className="trace-visual" aria-label={text.traceAria}>
-            <div className="trace-visual__package">
-              <span>01</span>
-              <strong>PACK / 2049</strong>
-              <div className="trace-visual__code" aria-hidden="true" />
+          <div className="trace-visual-column">
+            <div className="trace-visual" role="img" aria-label={text.traceAria}>
+              <div className="trace-visual__package" aria-hidden="true">
+                <span>{text.identityCodeLabel}</span>
+                {/* <strong>{cycletrackProductCode}</strong> */}
+
+                <svg className="trace-visual__bottle" viewBox="0 0 90 160">
+                  <path d="M34 8h22v25c0 7 3 12 10 20 8 9 12 21 12 34v50c0 9-7 16-16 16H28c-9 0-16-7-16-16V87c0-13 4-25 12-34 7-8 10-13 10-20V8Z" />
+                  <path d="M34 17h22M27 59c10 6 26 8 38 0" />
+                  <circle cx="45" cy="96" r="19" />
+                  <path d="M35 96h20M45 86v20" />
+                </svg>
+
+                <span className="trace-visual__passport-mark">DPP / 0001</span>
+              </div>
+              <span className="trace-node trace-node--one">{text.nodes[0]}</span>
+              <span className="trace-node trace-node--two">{text.nodes[1]}</span>
+              <span className="trace-node trace-node--three">{text.nodes[2]}</span>
+              <span className="trace-node trace-node--four">{text.nodes[3]}</span>
+              <div className="trace-visual__orbit" aria-hidden="true" />
             </div>
-            <span className="trace-node trace-node--one">{text.nodes[0]}</span>
-            <span className="trace-node trace-node--two">{text.nodes[1]}</span>
-            <span className="trace-node trace-node--three">{text.nodes[2]}</span>
-            <span className="trace-node trace-node--four">{text.nodes[3]}</span>
-            <div className="trace-visual__orbit" aria-hidden="true" />
+
+            <strong className="cycletrack-identity-statement">
+              {text.opportunityIdentity}
+            </strong>
           </div>
         </div>
       </section>
@@ -467,14 +495,15 @@ export default async function Cycletrack() {
               <circle className="cycletrack-vision-network__scan" cx="280" cy="280" r="34" />
             </svg>
 
-            <Image
-              className="cycletrack-vision-network__bottle"
-              src="/cycletrack/vision-bottle.png"
-              alt=""
-              width={1024}
-              height={1536}
-              sizes="(max-width: 900px) 55vw, 16rem"
-            />
+            <div className="cycletrack-vision-network__bottle-frame" aria-hidden="true">
+              <Image
+                className="cycletrack-vision-network__bottle"
+                src="/cycletrack/vision-bottle.png"
+                alt=""
+                fill
+                sizes="(max-width: 900px) 55vw, 16rem"
+              />
+            </div>
 
             {text.visionNodes.map((node, index) => (
               <span
