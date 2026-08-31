@@ -32,9 +32,33 @@ const copy = {
     opportunityAccent: " board-level issue.",
     opportunityBody:
       "Extended Producer Responsibility, PPWR and Digital Product Passport mandates are converging with rising ESG reporting pressure.",
+    opportunityProof: "Brands need proof, not estimates.",
+    opportunityOutcome:
+      "The result: less control, more risk and no integrated view of the chain.",
+    problemAria: "A fragmented product chain becoming a black box after the point of sale",
+    problemCore: "Black box",
+    problemZone: "After the sale",
+    problemNodes: ["Importer", "Distributor", "Collector", "Recycler"],
+    problemAreas: [
+      {
+        title: "Fragmented chain",
+        body: "Importers, distributors, points of sale, collectors and recyclers operate disconnected.",
+      },
+      {
+        title: "Counterfeit risk",
+        body: "Fraudulent packaging reuse, adulteration and code cloning create new exposure.",
+      },
+      {
+        title: "Limited market intelligence",
+        body: "The manufacturer loses visibility into where the product is sold and consumed.",
+      },
+      {
+        title: "No post-consumer traceability",
+        body: "There is no clear information about the packaging destination after consumption.",
+      },
+    ],
     opportunityIdentity:
       "Each bottle receives a unique digital identity — the foundation of its Digital Product Passport.",
-    opportunityProof: "Brands need proof, not estimates.",
     askInfo: "Ask for information",
     traceAria: "Unique product identity connected to the traceability network",
     identityCodeLabel: "Unique product code",
@@ -45,6 +69,15 @@ const copy = {
     visionBody:
       "CycleTrack links a unique product code to each bottle’s digital identity, creating a post-consumer traceability network that connects European manufacturers with Latin American communities and recycling partners.",
     visionClosing: "One connected journey. Verifiable circular economy outcomes.",
+    solution: "The solution",
+    solutionTitle: "One hub for the entire chain.",
+    solutionBody:
+      "CycleTrack connects, coordinates and makes circular operations visible across the value chain.",
+    solutionBenefits: [
+      { title: "One connection", body: "to access the entire network." },
+      { title: "Local orchestration", body: "for circular logistics." },
+      { title: "Operational data", body: "and real-time visibility." },
+    ],
     visionNetworkAria:
       "Bottle connected to suppliers, distributors, points of sale, collectors and recyclers",
     visionNodes: ["Suppliers", "Distributors", "Points of sale", "Collectors", "Recyclers"],
@@ -115,9 +148,33 @@ const copy = {
     opportunityAccent: " tema estratégico.",
     opportunityBody:
       "Responsabilidade Estendida do Produtor, PPWR e Passaporte Digital de Produto convergem com a crescente pressão por relatórios ESG.",
+    opportunityProof: "As marcas precisam de evidências, não estimativas.",
+    opportunityOutcome:
+      "O resultado: menos controle, mais risco e nenhuma visão integrada da cadeia.",
+    problemAria: "Uma cadeia de produtos fragmentada que se torna uma caixa-preta após a venda",
+    problemCore: "Caixa-preta",
+    problemZone: "Após a venda",
+    problemNodes: ["Importador", "Distribuidor", "Coletor", "Reciclador"],
+    problemAreas: [
+      {
+        title: "Cadeia fragmentada",
+        body: "Importadores, distribuidores, pontos de venda, coletores e recicladores operam desconectados.",
+      },
+      {
+        title: "Risco de falsificação",
+        body: "Reutilização fraudulenta da embalagem, adulteração e clonagem de códigos criam novas vulnerabilidades.",
+      },
+      {
+        title: "Pouca inteligência de mercado",
+        body: "O fabricante perde visibilidade sobre onde o produto é vendido e consumido.",
+      },
+      {
+        title: "Sem rastreabilidade pós-consumo",
+        body: "Não há informação clara sobre o destino da embalagem após o consumo.",
+      },
+    ],
     opportunityIdentity:
       "Cada garrafa recebe uma identidade digital única — a base do seu Passaporte Digital do Produto.",
-    opportunityProof: "As marcas precisam de evidências, não estimativas.",
     askInfo: "Solicitar informações",
     traceAria: "Identidade única do produto conectada à rede de rastreabilidade",
     identityCodeLabel: "Código único do produto",
@@ -128,6 +185,15 @@ const copy = {
     visionBody:
       "O CycleTrack vincula um código único de produto à identidade digital de cada garrafa, criando uma rede de rastreabilidade pós-consumo que conecta fabricantes europeus a comunidades latino-americanas e parceiros de reciclagem.",
     visionClosing: "Uma jornada conectada. Resultados verificáveis para a economia circular.",
+    solution: "A solução",
+    solutionTitle: "Um único hub para toda a cadeia.",
+    solutionBody:
+      "O CycleTrack conecta, coordena e torna visível a operação circular em toda a cadeia de valor.",
+    solutionBenefits: [
+      { title: "Uma única conexão", body: "para acessar toda a rede." },
+      { title: "Orquestração local", body: "da logística circular." },
+      { title: "Dados operacionais", body: "e visibilidade em tempo real." },
+    ],
     visionNetworkAria:
       "Garrafa conectada a fornecedores, distribuidores, pontos de venda, coletores e recicladores",
     visionNodes: ["Fornecedores", "Distribuidores", "Pontos de venda", "Coletores", "Recicladores"],
@@ -198,9 +264,33 @@ const copy = {
     opportunityAccent: " asunto estratégico.",
     opportunityBody:
       "La Responsabilidad Ampliada del Productor, el PPWR y el Pasaporte Digital de Producto convergen con la creciente presión de los informes ESG.",
+    opportunityProof: "Las marcas necesitan pruebas, no estimaciones.",
+    opportunityOutcome:
+      "El resultado: menos control, más riesgo y ninguna visión integrada de la cadena.",
+    problemAria: "Una cadena de productos fragmentada que se convierte en una caja negra después de la venta",
+    problemCore: "Caja negra",
+    problemZone: "Después de la venta",
+    problemNodes: ["Importador", "Distribuidor", "Recolector", "Reciclador"],
+    problemAreas: [
+      {
+        title: "Cadena fragmentada",
+        body: "Importadores, distribuidores, puntos de consumo, recolectores y recicladores operan desconectados.",
+      },
+      {
+        title: "Riesgo de falsificación",
+        body: "La reutilización fraudulenta del envase, la adulteración y la clonación de códigos crean nuevas vulnerabilidades.",
+      },
+      {
+        title: "Poca inteligencia de mercado",
+        body: "El fabricante pierde visibilidad sobre dónde se vende y consume el producto.",
+      },
+      {
+        title: "Sin trazabilidad posconsumo",
+        body: "No hay información clara sobre el destino del envase tras el consumo.",
+      },
+    ],
     opportunityIdentity:
       "Cada botella recibe una identidad digital única — la base de su Pasaporte Digital de Producto.",
-    opportunityProof: "Las marcas necesitan pruebas, no estimaciones.",
     askInfo: "Solicitar información",
     traceAria: "Identidad única del producto conectada a la red de trazabilidad",
     identityCodeLabel: "Código único del producto",
@@ -211,6 +301,15 @@ const copy = {
     visionBody:
       "CycleTrack vincula un código único de producto con la identidad digital de cada botella y crea una red de trazabilidad posconsumo que conecta a fabricantes europeos, comunidades latinoamericanas y socios de reciclaje.",
     visionClosing: "Un recorrido conectado. Resultados verificables de economía circular.",
+    solution: "La solución",
+    solutionTitle: "Un único hub para toda la cadena.",
+    solutionBody:
+      "CycleTrack conecta, coordina y hace visible la operación circular en toda la cadena de valor.",
+    solutionBenefits: [
+      { title: "Una sola conexión", body: "para acceder a toda la red." },
+      { title: "Orquestación local", body: "de la logística circular." },
+      { title: "Datos operativos", body: "y visibilidad en tiempo real." },
+    ],
     visionNetworkAria:
       "Botella conectada con proveedores, distribuidores, puntos de venta, recolectores y recicladores",
     visionNodes: ["Proveedores", "Distribuidores", "Puntos de venta", "Recolectores", "Recicladores"],
@@ -281,9 +380,33 @@ const copy = {
     opportunityAccent: " enjeu stratégique.",
     opportunityBody:
       "La responsabilité élargie du producteur, le PPWR et le passeport numérique des produits convergent avec la pression croissante du reporting ESG.",
+    opportunityProof: "Les marques ont besoin de preuves, pas d’estimations.",
+    opportunityOutcome:
+      "Résultat : moins de contrôle, plus de risques et aucune vision intégrée de la chaîne.",
+    problemAria: "Une chaîne de produits fragmentée qui devient une boîte noire après la vente",
+    problemCore: "Boîte noire",
+    problemZone: "Après la vente",
+    problemNodes: ["Importateur", "Distributeur", "Collecteur", "Recycleur"],
+    problemAreas: [
+      {
+        title: "Chaîne fragmentée",
+        body: "Importateurs, distributeurs, points de vente, collecteurs et recycleurs fonctionnent de manière déconnectée.",
+      },
+      {
+        title: "Risque de contrefaçon",
+        body: "La réutilisation frauduleuse des emballages, l’adultération et le clonage des codes créent de nouvelles vulnérabilités.",
+      },
+      {
+        title: "Peu d’intelligence de marché",
+        body: "Le fabricant perd toute visibilité sur les lieux de vente et de consommation du produit.",
+      },
+      {
+        title: "Aucune traçabilité post-consommation",
+        body: "Il n’existe aucune information claire sur le devenir de l’emballage après consommation.",
+      },
+    ],
     opportunityIdentity:
       "Chaque bouteille reçoit une identité numérique unique — la base de son passeport numérique de produit.",
-    opportunityProof: "Les marques ont besoin de preuves, pas d’estimations.",
     askInfo: "Demander des informations",
     traceAria: "Identité unique du produit reliée au réseau de traçabilité",
     identityCodeLabel: "Code produit unique",
@@ -294,6 +417,15 @@ const copy = {
     visionBody:
       "CycleTrack associe un code produit unique à l’identité numérique de chaque bouteille et crée un réseau de traçabilité post-consommation reliant les fabricants européens, les communautés latino-américaines et les partenaires du recyclage.",
     visionClosing: "Un parcours connecté. Des résultats vérifiables pour l’économie circulaire.",
+    solution: "La solution",
+    solutionTitle: "Un hub unique pour toute la chaîne.",
+    solutionBody:
+      "CycleTrack connecte, coordonne et rend visible l’opération circulaire sur l’ensemble de la chaîne de valeur.",
+    solutionBenefits: [
+      { title: "Une seule connexion", body: "pour accéder à l’ensemble du réseau." },
+      { title: "Orchestration locale", body: "de la logistique circulaire." },
+      { title: "Données opérationnelles", body: "et visibilité en temps réel." },
+    ],
     visionNetworkAria:
       "Bouteille reliée aux fournisseurs, distributeurs, points de vente, collecteurs et recycleurs",
     visionNodes: ["Fournisseurs", "Distributeurs", "Points de vente", "Collecteurs", "Recycleurs"],
@@ -412,8 +544,8 @@ export default async function Cycletrack() {
       </div>
 
       <section id="opportunity" className="cycletrack-opportunity">
-        <div className="cycletrack-section-grid">
-          <div className="cycletrack-section-copy">
+        <div className="cycletrack-opportunity__inner">
+          <header className="cycletrack-opportunity__heading">
             <span className="cycletrack-section-label">{text.opportunity}</span>
             <h2>
               {text.opportunityTitle}
@@ -421,37 +553,65 @@ export default async function Cycletrack() {
             </h2>
             <p>{text.opportunityBody}</p>
             <strong>{text.opportunityProof}</strong>
-            <Link href="/contact" className="cycletrack-text-link">
-              {text.askInfo} <ArrowIcon />
-            </Link>
-          </div>
+          </header>
 
-          <div className="trace-visual-column">
-            <div className="trace-visual" role="img" aria-label={text.traceAria}>
-              <div className="trace-visual__package" aria-hidden="true">
-                <span>{text.identityCodeLabel}</span>
-                {/* <strong>{cycletrackProductCode}</strong> */}
+          <div className="cycletrack-opportunity__body">
+            <div
+              className="cycletrack-problem-visual"
+              role="img"
+              aria-label={text.problemAria}
+            >
+              <svg
+                className="cycletrack-problem-visual__diagram"
+                viewBox="0 0 460 340"
+                aria-hidden="true"
+              >
+                <path
+                  className="cycletrack-problem-visual__map"
+                  d="M211 47l39 15 25 31 43 17 18 32-19 29 14 38-31 35-10 39-43 31-28-32-39-14-16-35-34-27 13-38-25-31 17-31-13-32 39-13 19-31Z"
+                />
+                <path
+                  className="cycletrack-problem-visual__connections"
+                  d="M55 60L190 139M405 60L284 145M58 286L183 218M403 286L287 220"
+                />
+                <circle cx="190" cy="139" r="6" />
+                <circle cx="284" cy="145" r="6" />
+                <circle cx="183" cy="218" r="6" />
+                <circle cx="287" cy="220" r="6" />
+              </svg>
 
-                <svg className="trace-visual__bottle" viewBox="0 0 90 160">
-                  <path d="M34 8h22v25c0 7 3 12 10 20 8 9 12 21 12 34v50c0 9-7 16-16 16H28c-9 0-16-7-16-16V87c0-13 4-25 12-34 7-8 10-13 10-20V8Z" />
-                  <path d="M34 17h22M27 59c10 6 26 8 38 0" />
-                  <circle cx="45" cy="96" r="19" />
-                  <path d="M35 96h20M45 86v20" />
-                </svg>
+              {text.problemNodes.map((node, index) => (
+                <span
+                  className={`cycletrack-problem-visual__node cycletrack-problem-visual__node--${index + 1}`}
+                  key={node}
+                >
+                  {node}
+                </span>
+              ))}
 
-                <span className="trace-visual__passport-mark">DPP / 0001</span>
+              <div className="cycletrack-problem-visual__core">
+                <strong>{text.problemCore}</strong>
+                <span>{text.problemZone}</span>
               </div>
-              <span className="trace-node trace-node--one">{text.nodes[0]}</span>
-              <span className="trace-node trace-node--two">{text.nodes[1]}</span>
-              <span className="trace-node trace-node--three">{text.nodes[2]}</span>
-              <span className="trace-node trace-node--four">{text.nodes[3]}</span>
-              <div className="trace-visual__orbit" aria-hidden="true" />
             </div>
 
-            <strong className="cycletrack-identity-statement">
-              {text.opportunityIdentity}
-            </strong>
+            <div className="cycletrack-problem-cards">
+              {text.problemAreas.map((area) => (
+                <article className="cycletrack-problem-card" key={area.title}>
+                  <h3>{area.title}</h3>
+                  <p>{area.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
+
+          <strong className="cycletrack-opportunity__outcome">
+            {text.opportunityOutcome}
+          </strong>
+
+          <Link href="/contact" className="cycletrack-text-link">
+            {text.askInfo} <ArrowIcon />
+          </Link>
         </div>
       </section>
 
@@ -523,6 +683,52 @@ export default async function Cycletrack() {
             </h2>
             <p>{text.visionBody}</p>
             <p>{text.visionClosing}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cycletrack-solution">
+        <div className="cycletrack-solution__inner">
+          <header className="cycletrack-solution__heading">
+            <span className="cycletrack-section-label">{text.solution}</span>
+            <h2>{text.solutionTitle}</h2>
+            <p>{text.solutionBody}</p>
+          </header>
+
+          <div className="trace-visual-column">
+            <div className="trace-visual" role="img" aria-label={text.traceAria}>
+              <div className="trace-visual__package" aria-hidden="true">
+                <span>{text.identityCodeLabel}</span>
+                <strong>{cycletrackProductCode}</strong>
+
+                <svg className="trace-visual__bottle" viewBox="0 0 90 160">
+                  <path d="M34 8h22v25c0 7 3 12 10 20 8 9 12 21 12 34v50c0 9-7 16-16 16H28c-9 0-16-7-16-16V87c0-13 4-25 12-34 7-8 10-13 10-20V8Z" />
+                  <path d="M34 17h22M27 59c10 6 26 8 38 0" />
+                  <circle cx="45" cy="96" r="19" />
+                  <path d="M35 96h20M45 86v20" />
+                </svg>
+
+                <span className="trace-visual__passport-mark">DPP / 0001</span>
+              </div>
+              <span className="trace-node trace-node--one">{text.nodes[0]}</span>
+              <span className="trace-node trace-node--two">{text.nodes[1]}</span>
+              <span className="trace-node trace-node--three">{text.nodes[2]}</span>
+              <span className="trace-node trace-node--four">{text.nodes[3]}</span>
+              <div className="trace-visual__orbit" aria-hidden="true" />
+            </div>
+
+            <strong className="cycletrack-identity-statement">
+              {text.opportunityIdentity}
+            </strong>
+          </div>
+
+          <div className="cycletrack-solution__benefits">
+            {text.solutionBenefits.map((benefit) => (
+              <article key={benefit.title}>
+                <strong>{benefit.title}</strong>
+                <p>{benefit.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
